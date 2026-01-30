@@ -30,11 +30,7 @@
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -70,12 +66,8 @@
       z-index: 2;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
-    /* HEADER SOLO TEXTO */
     header {
       text-align: center;
       margin-bottom: 22px;
@@ -105,7 +97,6 @@
       opacity: 0.9;
     }
 
-    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
@@ -128,9 +119,7 @@
       margin-bottom: 12px;
     }
 
-    .hero-title .highlight {
-      color: var(--accent-gold);
-    }
+    .hero-title .highlight { color: var(--accent-gold); }
 
     .hero-subtitle {
       font-size: 14px;
@@ -185,10 +174,7 @@
       flex-wrap: wrap;
     }
 
-    .price-main .currency {
-      font-size: 16px;
-      opacity: 0.85;
-    }
+    .price-main .currency { font-size: 16px; opacity: 0.85; }
 
     .price-main .amount {
       font-size: 26px;
@@ -214,10 +200,7 @@
       letter-spacing: 0.12em;
     }
 
-    .price-extra {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
+    .price-extra { font-size: 11px; color: var(--text-muted); }
 
     .hero-list {
       list-style: none;
@@ -261,7 +244,6 @@
       margin-bottom: 4px;
     }
 
-    /* BOTONES */
     .payment-buttons {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -292,21 +274,10 @@
       opacity: 0.98;
     }
 
-    .btn:active {
-      transform: translateY(0);
-      box-shadow: none;
-      opacity: 0.95;
-    }
+    .btn:active { transform: translateY(0); box-shadow: none; opacity: 0.95; }
 
-    .btn-hotmart {
-      background: var(--hotmart);
-      color: #ffffff;
-    }
-
-    .btn-stripe {
-      background: var(--stripe);
-      color: #ffffff;
-    }
+    .btn-hotmart { background: var(--hotmart); color: #ffffff; }
+    .btn-stripe { background: var(--stripe); color: #ffffff; }
 
     .btn .sub {
       font-size: 10px;
@@ -316,18 +287,9 @@
       font-weight: 700;
     }
 
-    .hero-note {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
+    .hero-note { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .hero-note strong { color: var(--accent-gold); font-weight: 600; }
 
-    .hero-note strong {
-      color: var(--accent-gold);
-      font-weight: 600;
-    }
-
-    /* VIDEO HERO */
     .hero-video-card {
       background: rgba(8, 8, 15, 0.9);
       border-radius: var(--radius-xl);
@@ -372,14 +334,9 @@
       margin-top: 8px;
     }
 
-    .video-caption .highlight {
-      color: var(--accent-gold);
-    }
+    .video-caption .highlight { color: var(--accent-gold); }
 
-    /* SECTION CARD */
-    section {
-      margin-top: 30px;
-    }
+    section { margin-top: 30px; }
 
     .section-card {
       background: var(--bg-card);
@@ -389,16 +346,8 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .section-title {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
+    .section-title { font-size: 18px; margin-bottom: 8px; }
+    .section-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
 
     .grid-2 {
       display: grid;
@@ -406,11 +355,7 @@
       gap: 18px;
     }
 
-    .check-list {
-      list-style: none;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
+    .check-list { list-style: none; font-size: 13px; color: var(--text-muted); }
 
     .check-list li {
       display: flex;
@@ -432,12 +377,7 @@
       flex-shrink: 0;
     }
 
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 
     .pill {
       font-size: 11px;
@@ -456,16 +396,9 @@
       margin-top: 8px;
     }
 
-    .quote-block strong {
-      color: var(--accent-gold);
-    }
+    .quote-block strong { color: var(--accent-gold); }
 
-    /* FAQ */
-    .faq-list {
-      display: grid;
-      gap: 10px;
-      font-size: 13px;
-    }
+    .faq-list { display: grid; gap: 10px; font-size: 13px; }
 
     .faq-item {
       border-radius: 12px;
@@ -474,14 +407,8 @@
       background: rgba(8, 8, 15, 0.9);
     }
 
-    .faq-q {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .faq-a {
-      color: var(--text-muted);
-    }
+    .faq-q { font-weight: 600; margin-bottom: 4px; }
+    .faq-a { color: var(--text-muted); }
 
     .btn-wa {
       background: var(--whatsapp);
@@ -509,11 +436,8 @@
       opacity: 0.75;
     }
 
-    .brand {
-      color: var(--accent-gold);
-    }
+    .brand { color: var(--accent-gold); }
 
-    /* RESPONSIVE */
     @media (max-width: 880px) {
       .hero { grid-template-columns: 1fr; }
       .hero-video-card { order: -1; }
@@ -530,18 +454,14 @@
 
 <body>
   <div class="page">
-
-    <!-- HEADER -->
     <header>
       <div class="brand-title">PERSALTUM</div>
       <div class="brand-sub">Universidad Digital del Infoproducto</div>
       <div class="brand-method">Presentación del Método Persaltum</div>
     </header>
 
-    <!-- HERO -->
     <main>
       <section class="hero">
-        <!-- TEXTO HERO -->
         <div>
           <div class="eyebrow">Presentación oficial</div>
 
@@ -579,7 +499,6 @@
             <li><span class="bullet">✓</span>Acceso inmediato después del pago.</li>
           </ul>
 
-          <!-- BOTONES PAGO (2) -->
           <div class="hero-ctas">
             <div class="cta-row-label">Elegí tu forma de pago</div>
 
@@ -603,7 +522,6 @@
           </div>
         </div>
 
-        <!-- VIDEO HERO -->
         <div class="hero-video-card">
           <div class="hero-video-tag">VSL + clase explicativa</div>
 
@@ -622,7 +540,6 @@
         </div>
       </section>
 
-      <!-- QUÉ INCLUYE -->
       <section>
         <div class="section-card">
           <h2 class="section-title">¿Qué incluye el Método Persaltum?</h2>
@@ -681,7 +598,6 @@
         </div>
       </section>
 
-      <!-- PARA QUIÉN ES / NO ES -->
       <section>
         <div class="section-card">
           <h2 class="section-title">¿Para quién es y para quién no es?</h2>
@@ -706,7 +622,6 @@
         </div>
       </section>
 
-      <!-- RESULTADOS -->
       <section>
         <div class="section-card">
           <h2 class="section-title">¿Qué vas a lograr con este material?</h2>
@@ -724,7 +639,6 @@
         </div>
       </section>
 
-      <!-- FAQ + WHATSAPP -->
       <section>
         <div class="grid-2">
           <div class="section-card">
@@ -772,7 +686,6 @@
         </div>
       </section>
 
-      <!-- CTA FINAL -->
       <section>
         <div class="section-card">
           <h2 class="section-title">Si te dijera que no podés fracasar, ¿cuán grande sería tu sueño?</h2>
