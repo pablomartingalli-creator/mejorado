@@ -19,13 +19,18 @@
 
       --stripe: #635bff;
       --hotmart: #ff5c00;
+      --mercadopago: #00b1ea;
       --whatsapp: #25d366;
 
       --radius-xl: 18px;
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -34,7 +39,10 @@
       line-height: 1.5;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     .page {
       max-width: 1120px;
@@ -77,6 +85,10 @@
       letter-spacing: 0.08em;
     }
 
+    .logo-text span:first-child {
+      font-weight: 600;
+    }
+
     .logo-text span:last-child {
       color: var(--text-muted);
       font-size: 11px;
@@ -87,8 +99,9 @@
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      text-align: right;
     }
+
+    /* HERO */
 
     .hero {
       display: grid;
@@ -112,7 +125,9 @@
       margin-bottom: 12px;
     }
 
-    .hero-title span { color: var(--accent-gold); }
+    .hero-title span.highlight {
+      color: var(--accent-gold);
+    }
 
     .hero-subtitle {
       font-size: 14px;
@@ -134,7 +149,7 @@
       margin-bottom: 16px;
     }
 
-    .hero-badge .dot {
+    .hero-badge span.dot {
       width: 6px;
       height: 6px;
       border-radius: 999px;
@@ -144,21 +159,51 @@
     .price-card {
       background: rgba(10, 10, 18, 0.9);
       border-radius: var(--radius-xl);
-      padding: 14px;
+      padding: 14px 14px 16px;
       border: 1px solid rgba(245, 196, 91, 0.22);
       box-shadow: var(--shadow-soft);
       margin-bottom: 12px;
     }
 
-    .price-main {
+    .price-row {
       display: flex;
-      gap: 6px;
       align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
     }
 
-    .price-main .amount {
+    .price-main {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .price-main span.currency {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .price-main span.amount {
       font-size: 26px;
       font-weight: 700;
+    }
+
+    .price-main span.once {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .price-tagline {
+      font-size: 11px;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .price-extra {
+      font-size: 11px;
+      color: var(--text-muted);
     }
 
     .hero-list {
@@ -170,11 +215,12 @@
 
     .hero-list li {
       display: flex;
+      align-items: center;
       gap: 8px;
       margin-bottom: 4px;
     }
 
-    .bullet {
+    .hero-list li span.bullet {
       width: 14px;
       height: 14px;
       border-radius: 999px;
@@ -184,7 +230,13 @@
       justify-content: center;
       font-size: 10px;
       color: var(--accent-gold);
-      flex-shrink: 0;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
     .cta-row-label {
@@ -192,39 +244,52 @@
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
+    /* ✅ ahora son 2 botones */
     .payment-buttons {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      gap: 8px;
     }
 
-    /* 🔧 BOTONES CORREGIDOS */
+    /* ✅ ajuste leve para que el texto no “se desborde” nunca */
     .btn {
       border-radius: 999px;
       padding: 10px 12px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      line-height: 1.2;
       text-align: center;
       border: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 6px;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
       white-space: nowrap;
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
-      transition: transform 0.12s ease, opacity 0.12s ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 40px;
     }
 
-    .btn:hover { transform: translateY(-1px); }
-    .btn:active { opacity: 0.9; }
+    .btn span.sub {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.8;
+    }
 
-    .btn-hotmart {
-      background: var(--hotmart);
-      color: #ffffff;
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+      box-shadow: none;
+      opacity: 0.9;
     }
 
     .btn-stripe {
@@ -232,17 +297,81 @@
       color: #ffffff;
     }
 
+    .btn-hotmart {
+      background: var(--hotmart);
+      color: #ffffff;
+    }
+
     .hero-note {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-note strong {
+      color: var(--accent-gold);
+      font-weight: 500;
+    }
+
+    /* VIDEO */
+
+    .hero-video-card {
+      background: rgba(8, 8, 15, 0.9);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(245, 196, 91, 0.15);
+      padding: 10px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-video-tag {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(245, 196, 91, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 */
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-caption {
       font-size: 11px;
       color: var(--text-muted);
       margin-top: 8px;
     }
 
-    section { margin-top: 30px; }
+    .video-caption span.highlight {
+      color: var(--accent-gold);
+    }
+
+    /* SECTION WRAPPER */
+
+    section {
+      margin-top: 30px;
+    }
 
     .section-card {
       background: var(--bg-card);
       border-radius: var(--radius-xl);
+      border: 1px solid rgba(255, 255, 255, 0.04);
       padding: 18px 16px;
       box-shadow: var(--shadow-soft);
     }
@@ -250,6 +379,114 @@
     .section-title {
       font-size: 18px;
       margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .check-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .check {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(245, 196, 91, 0.25);
+      background: rgba(245, 196, 91, 0.06);
+      color: var(--text-muted);
+    }
+
+    .quote-block {
+      font-size: 12px;
+      color: var(--text-muted);
+      border-left: 2px solid rgba(245, 196, 91, 0.4);
+      padding-left: 10px;
+      margin-top: 8px;
+    }
+
+    .quote-block strong {
+      color: var(--accent-gold);
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .faq-item {
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 10px 12px;
+      background: rgba(8, 8, 15, 0.9);
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .faq-a {
+      color: var(--text-muted);
+    }
+
+    /* WHATSAPP / FOOTER */
+
+    .wa-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .btn-wa {
+      background: var(--whatsapp);
+      color: #ffffff;
+    }
+
+    .btn-wa span.icon {
+      font-size: 15px;
     }
 
     footer {
@@ -260,75 +497,361 @@
       opacity: 0.75;
     }
 
-    footer span { color: var(--accent-gold); }
+    footer span.brand {
+      color: var(--accent-gold);
+    }
+
+    /* RESPONSIVE */
 
     @media (max-width: 880px) {
-      .hero { grid-template-columns: 1fr; }
-      .payment-buttons { grid-template-columns: 1fr; }
-      .header-tagline { display: none; }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-video-card {
+        order: -1;
+      }
+
+      .payment-buttons {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 24px;
+      }
+
+      .page {
+        padding-inline: 14px;
+      }
     }
   </style>
 </head>
-
 <body>
-<div class="page">
-  <header>
-    <div class="logo">
-      <div class="logo-mark">P</div>
-      <div class="logo-text">
-        <span>Persaltum</span>
-        <span>Método para vender online</span>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">P</div>
+        <div class="logo-text">
+          <span>Persaltum</span>
+          <span>Método para vender online</span>
+        </div>
       </div>
-    </div>
-    <div class="header-tagline">Dejá de adivinar cómo vender online</div>
-  </header>
+      <div class="header-tagline">
+        Dejá de adivinar cómo vender online
+      </div>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div>
-        <div class="eyebrow">Presentación del Método Persaltum</div>
-        <h1 class="hero-title">
-          Donde te explico <span>paso a paso</span> cómo crear y automatizar tu negocio digital.
-        </h1>
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Presentación del Método Persaltum</div>
+          <h1 class="hero-title">
+            Donde te explico <span class="highlight">paso a paso</span> cómo crear y automatizar tu negocio digital.
+          </h1>
+          <p class="hero-subtitle">
+            No necesitás ser influencer ni saber de tecnología. Solo necesitás un sistema simple que capte, eduque y venda por vos las 24 horas del día, aunque no estés conectado.
+          </p>
 
-        <p class="hero-subtitle">
-          PDF + clase introductoria para dejar de improvisar y empezar a vender con un sistema claro.
-        </p>
+          <div class="hero-badge">
+            <span class="dot"></span>
+            <span>PDF estratégico + clase introductoria (video)</span>
+          </div>
 
-        <div class="price-card">
-          <div class="price-main">
-            <span>USD</span>
-            <span class="amount">37</span>
-            <span>pago único</span>
+          <div class="price-card">
+            <div class="price-row">
+              <div class="price-main">
+                <span class="currency">USD</span>
+                <span class="amount">37</span>
+                <span class="once">pago único</span>
+              </div>
+              <div class="price-tagline">
+                Lanzamiento promocional limitado
+              </div>
+            </div>
+            <div class="price-extra">
+              Acceso inmediato al <strong>PDF del Método Persaltum</strong> + una <strong>clase introductoria</strong> donde te muestro el sistema completo para dejar de improvisar y empezar a vender con método.
+            </div>
+          </div>
+
+          <ul class="hero-list">
+            <li>
+              <span class="bullet">✓</span>
+              <span><strong>PDF estratégico</strong> del Método Persaltum (claro, directo y aplicable).</span>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <span><strong>Clase introductoria (video)</strong> para entender cómo aplicar el método en tu realidad.</span>
+            </li>
+            <li>
+              <span class="bullet">✓</span>
+              <span><strong>Acceso inmediato</strong> después del pago, sin esperas ni procesos complicados.</span>
+            </li>
+          </ul>
+
+          <div class="hero-ctas">
+            <div>
+              <div class="cta-row-label">Elegí tu forma de pago</div>
+              <div class="payment-buttons">
+                <a
+                  class="btn btn-stripe"
+                  href="https://buy.stripe.com/8x228q3HL8H14qx1OKbwk0n"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Pago con tarjeta / transferencia según tu opción en el checkout"
+                >
+                  <span>Comprar con Stripe</span>
+                </a>
+                <a
+                  class="btn btn-hotmart"
+                  href="https://go.hotmart.com/V101694536F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Comprar en Hotmart</span>
+                  <span class="sub">recomendado</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-note">
+            <strong>Importante:</strong> el acceso es inmediato. Si el checkout muestra productos adicionales, son opcionales. El Método Persaltum sigue siendo tuyo igual.
           </div>
         </div>
 
-        <ul class="hero-list">
-          <li><span class="bullet">✓</span>PDF estratégico del Método Persaltum</li>
-          <li><span class="bullet">✓</span>Clase introductoria (video)</li>
-          <li><span class="bullet">✓</span>Acceso inmediato</li>
-        </ul>
-
-        <div class="cta-row-label">Elegí tu forma de pago</div>
-        <div class="payment-buttons">
-          <a class="btn btn-hotmart" href="https://go.hotmart.com/V101694536F" target="_blank">
-            Pago con tarjeta
-          </a>
-          <a class="btn btn-stripe" href="https://buy.stripe.com/8x228q3HL8H14qx1OKbwk0n" target="_blank">
-            Transferencia
-          </a>
+        <!-- VIDEO -->
+        <div class="hero-video-card">
+          <div class="hero-video-tag">VSL + clase introductoria</div>
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/SJCvhQZMuT4"
+              title="Presentación del Método Persaltum"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="video-caption">
+            En este video, <span class="highlight">Pablo Galli</span> te muestra el sistema que vas a aplicar con el Método Persaltum para dejar de adivinar cómo vender online.
+          </div>
         </div>
+      </section>
 
-        <div class="hero-note">
-          Acceso inmediato al PDF + clase introductoria. Garantía 7 días.
+      <!-- QUÉ INCLUYE -->
+      <section>
+        <div class="section-card">
+          <h2 class="section-title">¿Qué incluye el Método Persaltum en esta versión?</h2>
+          <p class="section-subtitle">
+            Esta no es una teoría más. Es el resumen estratégico de años de experiencia, pruebas reales y
+            miles de dólares invertidos en formación, condensados en un sistema simple de aplicar.
+          </p>
+
+          <div class="grid-2">
+            <div>
+              <ul class="check-list">
+                <li>
+                  <div class="check">✓</div>
+                  <div>
+                    <strong>PDF estratégico del Método Persaltum</strong><br />
+                    Un documento claro y accionable donde ves el mapa completo del sistema: captación,
+                    contenido, automatización y venta.
+                  </div>
+                </li>
+                <li>
+                  <div class="check">✓</div>
+                  <div>
+                    <strong>Clase introductoria (video)</strong><br />
+                    Una explicación simple para que entiendas cómo aplicar el método sin volverte loco.
+                  </div>
+                </li>
+                <li>
+                  <div class="check">✓</div>
+                  <div>
+                    <strong>Herramientas digitales para automatizar tu sistema de ventas</strong><br />
+                    Qué herramientas usar y para qué sirve cada una (sin paso a paso técnico):
+                    <div class="pill-list" style="margin-top:8px;">
+                      <div class="pill">Landing/Website (Vercel / WordPress)</div>
+                      <div class="pill">Pagos (Hotmart / Stripe)</div>
+                      <div class="pill">Email marketing (MailerLite / Brevo)</div>
+                      <div class="pill">Automatización (Zapier / Make)</div>
+                      <div class="pill">CRM simple (Google Sheets / Notion)</div>
+                      <div class="pill">WhatsApp (WA Business)</div>
+                      <div class="pill">Calendario (Cal.com)</div>
+                    </div>
+                    <div class="quote-block" style="margin-top:10px;">
+                      <strong>Qué evitar:</strong> usar 10 herramientas a la vez, pagar apps que no necesitás,
+                      o armar automatizaciones complejas antes de validar tu oferta.
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="check">✓</div>
+                  <div>
+                    <strong>Enfoque sin tecnicismos</strong><br />
+                    Lenguaje claro, sin palabras raras ni conceptos vacíos. Lo que necesitás saber para vender,
+                    explicado como si estuviéramos hablando por WhatsApp.
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="quote-block">
+                <strong>Si te dijera que no podés fracasar, ¿cuán grande sería tu sueño?</strong><br />
+                El Método Persaltum está diseñado para que dejes de improvisar y empieces a construir una empresa
+                digital con base sólida, aunque hoy sientas que estás empezando de cero.
+              </div>
+              <div class="pill-list">
+                <div class="pill">Ideal si recién empezás</div>
+                <div class="pill">Sirve si ya vendés pero estás estancado</div>
+                <div class="pill">Aplicable a servicios, cursos y mentorías</div>
+                <div class="pill">Pensado para Latinoamérica y el mundo</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- RESULTADOS -->
+      <section>
+        <div class="section-card">
+          <h2 class="section-title">¿Qué vas a lograr con este material?</h2>
+          <p class="section-subtitle">
+            El objetivo es que termines el PDF y la clase introductoria con claridad mental, foco y un plan simple
+            para avanzar, no con más dudas.
+          </p>
+
+          <ul class="check-list">
+            <li>
+              <div class="check">✓</div>
+              <div>Entender cuál es el modelo de negocio digital que mejor encaja con vos.</div>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <div>Ver cómo funciona un sistema que capta, educa y vende con método.</div>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <div>Dejar de improvisar contenido y empezar a comunicar con estrategia.</div>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <div>Saber qué herramientas usar (y cuáles evitar) para automatizar sin volverte loco.</div>
+            </li>
+            <li>
+              <div class="check">✓</div>
+              <div>Tener un primer mapa claro para escalar después a mentorías, cursos o una universidad digital.</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- FAQ + WHATSAPP -->
+      <section>
+        <div class="grid-2">
+          <div class="section-card">
+            <h2 class="section-title">Preguntas frecuentes</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-q">¿Cuándo recibo el material?</div>
+                <div class="faq-a">
+                  El acceso es inmediato. Apenas se acredita el pago, recibís el PDF del Método Persaltum y el acceso
+                  al video de la clase introductoria en tu correo.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q">¿Necesito experiencia previa en marketing o tecnología?</div>
+                <div class="faq-a">
+                  No. El material está pensado para que lo entienda alguien que recién empieza. Si ya tenés experiencia,
+                  te va a ayudar a ordenar y simplificar todo lo que venís haciendo.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q">¿Qué pasa con los productos adicionales?</div>
+                <div class="faq-a">
+                  Si el checkout te muestra opciones extra, son opcionales. Podés aceptar o no, y el Método Persaltum
+                  sigue siendo tuyo igual.
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-q">¿Qué pasa si tengo dudas después de comprar?</div>
+                <div class="faq-a">
+                  Podés entrar al grupo de WhatsApp exclusivo donde vas a recibir novedades, avisos de nuevas clases y
+                  lanzamientos futuros. Desde ahí también vas a saber cómo acceder a programas más avanzados.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-card wa-card">
+            <div>
+              <h2 class="section-title">Entrá al grupo silencioso de novedades</h2>
+              <p class="section-subtitle">
+                Te sumo a un grupo de WhatsApp donde solo vas a ver noticias, lanzamientos y avisos importantes del
+                Método Persaltum y la Universidad Digital del Infoproducto. Sin spam, sin mensajes de otros usuarios.
+              </p>
+            </div>
+
+            <a
+              class="btn btn-wa"
+              href="https://chat.whatsapp.com/Gg1xzEhj28vEJVSth0VLzG"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="icon">💬</span>
+              <span>Unirme al grupo de novedades</span>
+            </a>
+
+            <p class="hero-note">
+              Solo admins pueden publicar. Es un canal para avisarte de nuevas clases, actualizaciones y oportunidades
+              especiales relacionadas con el Método Persaltum.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section>
+        <div class="section-card">
+          <h2 class="section-title">Si te dijera que no podés fracasar, ¿cuán grande sería tu sueño?</h2>
+          <p class="section-subtitle">
+            Este es el primer paso: dejar de adivinar y empezar a usar un sistema que ya está probado. El resto lo vamos
+            a construir juntos, paso a paso.
+          </p>
+
+          <div class="hero-ctas">
+            <div class="cta-row-label">Empezá ahora con el Método Persaltum</div>
+            <div class="payment-buttons">
+              <a
+                class="btn btn-stripe"
+                href="https://buy.stripe.com/8x228q3HL8H14qx1OKbwk0n"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Comprar con Stripe</span>
+              </a>
+              <a
+                class="btn btn-hotmart"
+                href="https://go.hotmart.com/V101694536F"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Comprar en Hotmart</span>
+                <span class="sub">recomendado</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
-      <p><span>Persaltum</span> · Universidad Digital del Infoproducto · Todos los derechos reservados.</p>
+      <p>
+        <span class="brand">Persaltum</span> · Universidad Digital del Infoproducto · Todos los derechos reservados.
+      </p>
     </footer>
-  </main>
-</div>
+  </div>
 </body>
 </html>
