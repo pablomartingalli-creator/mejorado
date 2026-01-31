@@ -2,452 +2,457 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Método Persaltum – Presentación oficial</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Presentación oficial del Método Persaltum: un sistema simple para crear y automatizar tu negocio digital paso a paso."
-  />
+
+  <title>Método Persaltum – Presentación oficial</title>
+  <meta name="description" content="Presentación oficial del Método Persaltum: un sistema simple para crear y automatizar tu negocio digital paso a paso." />
+
+  <!-- Opcional pero recomendable -->
+  <meta name="theme-color" content="#050509" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Mejoras de performance para YouTube -->
+  <link rel="preconnect" href="https://www.youtube.com" />
+  <link rel="preconnect" href="https://i.ytimg.com" />
+  <link rel="preconnect" href="https://www.google.com" />
 
   <style>
-    :root {
-      --bg-main: #050509;
-      --bg-card: #111117;
-      --accent-gold: #f5c45b;
-      --accent-gold-soft: rgba(245, 196, 91, 0.2);
-      --text-main: #f8f8ff;
-      --text-muted: #b3b3c2;
+    :root{
+      --bg-main:#050509;
+      --bg-card:#111117;
+      --accent-gold:#f5c45b;
+      --accent-gold-soft:rgba(245,196,91,.2);
+      --text-main:#f8f8ff;
+      --text-muted:#b3b3c2;
 
-      --gold: #f5c45b;
-      --gold-hover: #d6a945;
+      --hotmart:#ff5c00;
+      --stripe:#635bff;
+      --whatsapp:#25d366;
 
-      --hotmart: #ff5c00;
-      --stripe: #635bff;
+      --radius-xl:18px;
+      --shadow-soft:0 18px 40px rgba(0,0,0,.45);
 
-      --whatsapp: #25d366;
-
-      --radius-xl: 18px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+      --focus: 0 0 0 3px rgba(245,196,91,.35);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1a1a27 0%, #050509 60%);
-      color: var(--text-main);
-      line-height: 1.5;
-      overflow-x: hidden;
-      position: relative;
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:radial-gradient(circle at top,#1a1a27 0%,#050509 60%);
+      color:var(--text-main);
+      line-height:1.5;
+      overflow-x:hidden;
+      position:relative;
     }
 
     /* LOGO DE FONDO (LEÓN PERSALTUM) */
-    body::before {
-      content: "";
-      position: fixed;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 620px;
-      height: 620px;
-      background: url("logo-persaltum.jpeg.jpeg") no-repeat center;
-      background-size: contain;
-      opacity: 0.18;
-      filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.6));
-      pointer-events: none;
-      z-index: 0;
+    body::before{
+      content:"";
+      position:fixed;
+      top:-40px;
+      left:50%;
+      transform:translateX(-50%);
+      width:620px;
+      height:620px;
+      background:url("logo-persaltum.jpeg") no-repeat center;
+      background-size:contain;
+      opacity:.18;
+      filter:drop-shadow(0 0 16px rgba(0,0,0,.6));
+      pointer-events:none;
+      z-index:0;
     }
 
-    .page {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 24px 16px 64px;
-      position: relative;
-      z-index: 2;
+    .page{
+      max-width:1120px;
+      margin:0 auto;
+      padding:24px 16px 72px;
+      position:relative;
+      z-index:2;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a{text-decoration:none;color:inherit}
+    a:focus-visible, button:focus-visible{outline:none;box-shadow:var(--focus);border-radius:999px}
 
-    header {
-      text-align: center;
-      margin-bottom: 22px;
-      margin-top: 4px;
+    header{text-align:center;margin:4px 0 22px}
+    .brand-title{
+      font-size:26px;
+      color:var(--accent-gold);
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+    .brand-sub{
+      font-size:13px;
+      color:var(--text-muted);
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-top:4px;
+    }
+    .brand-method{
+      font-size:13px;
+      color:var(--text-main);
+      margin-top:6px;
+      opacity:.9;
     }
 
-    .brand-title {
-      font-size: 26px;
-      color: var(--accent-gold);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+      gap:28px;
+      align-items:center;
+      margin-bottom:32px;
     }
 
-    .brand-sub {
-      font-size: 13px;
-      color: var(--text-muted);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-top: 4px;
+    .eyebrow{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--accent-gold);
+      margin-bottom:8px;
+    }
+    .hero-title{
+      font-size:30px;
+      line-height:1.1;
+      margin-bottom:12px;
+      font-weight:900;
+    }
+    .hero-title .highlight{color:var(--accent-gold)}
+    .hero-subtitle{
+      font-size:14px;
+      color:var(--text-muted);
+      max-width:520px;
+      margin-bottom:16px;
     }
 
-    .brand-method {
-      font-size: 13px;
-      color: var(--text-main);
-      margin-top: 6px;
-      opacity: 0.9;
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:11px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--accent-gold-soft);
+      background:rgba(5,5,12,.9);
+      color:var(--text-muted);
+      margin-bottom:16px;
+    }
+    .dot{width:6px;height:6px;border-radius:999px;background:var(--accent-gold)}
+
+    .price-card{
+      background:rgba(10,10,18,.9);
+      border-radius:var(--radius-xl);
+      padding:14px;
+      border:1px solid rgba(245,196,91,.22);
+      box-shadow:var(--shadow-soft);
+      margin-bottom:12px;
+      font-size:13px;
+    }
+    .price-row{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:8px;
+      flex-wrap:wrap;
+    }
+    .price-main{
+      display:flex;
+      align-items:baseline;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .price-main .currency{font-size:16px;opacity:.85}
+    .price-main .amount{font-size:28px;font-weight:900}
+    .price-main .amount-old{font-size:18px;font-weight:700;opacity:.55;text-decoration:line-through}
+    .price-main .once{font-size:13px;color:var(--text-muted)}
+    .price-tagline{
+      font-size:11px;
+      color:var(--accent-gold);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .price-extra{font-size:11px;color:var(--text-muted)}
+
+    .trust-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .trust-pill{
+      font-size:11px;
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(8,8,15,.55);
+      color:var(--text-muted);
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-      gap: 28px;
-      align-items: center;
-      margin-bottom: 32px;
+    .hero-list{
+      list-style:none;
+      font-size:13px;
+      color:var(--text-muted);
+      margin-bottom:12px;
+    }
+    .hero-list li{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:6px;
+    }
+    .bullet{
+      width:14px;height:14px;border-radius:999px;
+      border:1px solid var(--accent-gold-soft);
+      display:flex;align-items:center;justify-content:center;
+      font-size:10px;color:var(--accent-gold);
+      flex-shrink:0;
     }
 
-    .eyebrow {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent-gold);
-      margin-bottom: 8px;
+    .hero-ctas{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .cta-row-label{
+      font-size:11px;
+      color:var(--text-muted);
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      margin-bottom:4px;
     }
 
-    .hero-title {
-      font-size: 30px;
-      line-height: 1.1;
-      margin-bottom: 12px;
+    .payment-buttons{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-bottom:6px;
     }
 
-    .hero-title .highlight { color: var(--accent-gold); }
+    .btn{
+      border-radius:999px;
+      padding:12px 14px;
+      font-size:14px;
+      font-weight:900;
+      text-align:center;
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      transition:.18s ease;
+      box-shadow:0 0 10px rgba(0,0,0,.35);
+      white-space:normal;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 12px 22px rgba(0,0,0,.45);
+      opacity:.98;
+    }
+    .btn:active{transform:translateY(0);box-shadow:none;opacity:.95}
 
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-muted);
-      max-width: 480px;
-      margin-bottom: 16px;
+    .btn .sub{
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      opacity:.95;
+      font-weight:800;
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--accent-gold-soft);
-      background: rgba(5, 5, 12, 0.9);
-      color: var(--text-muted);
-      margin-bottom: 16px;
+    .btn-hotmart{background:var(--hotmart);color:#fff}
+    .btn-stripe{background:var(--stripe);color:#fff}
+    .btn-wa{
+      background:var(--whatsapp);
+      color:#fff;
+      box-shadow:0 0 10px rgba(37,211,102,.35);
+    }
+    .btn-wa:hover{
+      background:#1eb457;
+      box-shadow:0 0 18px rgba(37,211,102,.45);
     }
 
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent-gold);
+    .hero-note{font-size:11px;color:var(--text-muted);margin-top:2px}
+    .hero-note strong{color:var(--accent-gold);font-weight:700}
+
+    .hero-video-card{
+      background:rgba(8,8,15,.9);
+      border-radius:var(--radius-xl);
+      border:1px solid rgba(245,196,91,.15);
+      padding:12px;
+      box-shadow:var(--shadow-soft);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-video-tag{
+      position:absolute;
+      top:10px;left:12px;
+      font-size:10px;
+      padding:4px 8px;
+      border-radius:999px;
+      background:rgba(0,0,0,.55);
+      border:1px solid rgba(245,196,91,.35);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .video-wrapper{
+      position:relative;
+      padding-top:56.25%;
+      border-radius:14px;
+      overflow:hidden;
+      background:rgba(0,0,0,.25);
+    }
+    .video-wrapper iframe{
+      position:absolute;inset:0;
+      width:100%;height:100%;
+      border:0;
+    }
+    .video-caption{
+      font-size:11px;
+      color:var(--text-muted);
+      margin-top:8px;
+    }
+    .video-caption .highlight{color:var(--accent-gold)}
+
+    section{margin-top:30px}
+    .section-card{
+      background:var(--bg-card);
+      border-radius:var(--radius-xl);
+      border:1px solid rgba(255,255,255,.04);
+      padding:18px 16px;
+      box-shadow:var(--shadow-soft);
+    }
+    .section-title{font-size:18px;margin-bottom:8px}
+    .section-subtitle{font-size:13px;color:var(--text-muted);margin-bottom:14px}
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      gap:18px;
     }
 
-    .price-card {
-      background: rgba(10, 10, 18, 0.9);
-      border-radius: var(--radius-xl);
-      padding: 14px;
-      border: 1px solid rgba(245, 196, 91, 0.22);
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 12px;
-      font-size: 13px;
+    .check-list{list-style:none;font-size:13px;color:var(--text-muted)}
+    .check-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+      margin-bottom:6px;
+    }
+    .check{
+      width:16px;height:16px;border-radius:999px;
+      border:1px solid var(--accent-gold-soft);
+      display:flex;align-items:center;justify-content:center;
+      font-size:11px;color:var(--accent-gold);
+      flex-shrink:0;
     }
 
-    .price-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
+    .pill-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+    .pill{
+      font-size:11px;
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid rgba(245,196,91,.25);
+      background:rgba(245,196,91,.06);
+      color:var(--text-muted);
     }
 
-    .price-main {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      flex-wrap: wrap;
+    .quote-block{
+      font-size:12px;
+      color:var(--text-muted);
+      border-left:2px solid rgba(245,196,91,.4);
+      padding-left:10px;
+      margin-top:8px;
+    }
+    .quote-block strong{color:var(--accent-gold)}
+
+    .faq-list{display:grid;gap:10px;font-size:13px}
+    .faq-item{
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.05);
+      padding:10px 12px;
+      background:rgba(8,8,15,.9);
+    }
+    .faq-q{font-weight:800;margin-bottom:4px}
+    .faq-a{color:var(--text-muted)}
+
+    .wa-card{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      align-items:flex-start;
     }
 
-    .price-main .currency { font-size: 16px; opacity: 0.85; }
-
-    .price-main .amount {
-      font-size: 26px;
-      font-weight: 800;
+    footer{
+      margin-top:28px;
+      font-size:11px;
+      color:var(--text-muted);
+      text-align:center;
+      opacity:.75;
     }
+    .brand{color:var(--accent-gold)}
 
-    .price-main .amount-old {
-      font-size: 18px;
-      font-weight: 700;
-      opacity: 0.55;
-      text-decoration: line-through;
+    /* CTA fijo mobile */
+    .sticky-cta{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      padding:10px 12px;
+      background:rgba(5,5,9,.82);
+      backdrop-filter: blur(10px);
+      border-top:1px solid rgba(255,255,255,.06);
+      z-index:50;
+      display:none;
     }
-
-    .price-main .once {
-      font-size: 13px;
-      color: var(--text-muted);
+    .sticky-inner{
+      max-width:1120px;
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
     }
-
-    .price-tagline {
-      font-size: 11px;
-      color: var(--accent-gold);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+    .sticky-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
     }
-
-    .price-extra { font-size: 11px; color: var(--text-muted); }
-
-    .hero-list {
-      list-style: none;
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
+    .sticky-text strong{color:var(--accent-gold);font-size:12px}
+    .sticky-text span{color:var(--text-muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw}
+    .sticky-actions{
+      display:flex;
+      gap:8px;
+      flex-shrink:0;
     }
-
-    .hero-list li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
+    .btn-mini{
+      padding:10px 12px;
+      font-size:12px;
+      font-weight:900;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:0;
+      cursor:pointer;
+      color:#fff;
+      box-shadow:0 0 10px rgba(0,0,0,.35);
+      transition:.18s ease;
+      white-space:nowrap;
     }
+    .btn-mini:active{opacity:.95}
 
-    .bullet {
-      width: 14px;
-      height: 14px;
-      border-radius: 999px;
-      border: 1px solid var(--accent-gold-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: var(--accent-gold);
-      flex-shrink: 0;
+    @media (max-width: 880px){
+      .hero{grid-template-columns:1fr}
+      .hero-video-card{order:-1}
+      body::before{width:420px;height:420px;top:-10px;opacity:.22}
+      .payment-buttons{grid-template-columns:1fr}
+      .sticky-cta{display:block}
+      .page{padding-bottom:110px}
     }
-
-    .hero-ctas {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .cta-row-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 4px;
-    }
-
-    .payment-buttons {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 12px 14px;
-      font-size: 14px;
-      font-weight: 800;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: 0.18s ease;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-      white-space: normal;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.45);
-      opacity: 0.98;
-    }
-
-    .btn:active { transform: translateY(0); box-shadow: none; opacity: 0.95; }
-
-    .btn-hotmart { background: var(--hotmart); color: #ffffff; }
-    .btn-stripe { background: var(--stripe); color: #ffffff; }
-
-    .btn .sub {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      opacity: 0.95;
-      font-weight: 700;
-    }
-
-    .hero-note { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-    .hero-note strong { color: var(--accent-gold); font-weight: 600; }
-
-    .hero-video-card {
-      background: rgba(8, 8, 15, 0.9);
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(245, 196, 91, 0.15);
-      padding: 12px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-video-tag {
-      position: absolute;
-      top: 10px;
-      left: 12px;
-      font-size: 10px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.55);
-      border: 1px solid rgba(245, 196, 91, 0.35);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .video-wrapper {
-      position: relative;
-      padding-top: 56.25%;
-      border-radius: 14px;
-      overflow: hidden;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .video-caption {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
-
-    .video-caption .highlight { color: var(--accent-gold); }
-
-    section { margin-top: 30px; }
-
-    .section-card {
-      background: var(--bg-card);
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      padding: 18px 16px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .section-title { font-size: 18px; margin-bottom: 8px; }
-    .section-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 18px;
-    }
-
-    .check-list { list-style: none; font-size: 13px; color: var(--text-muted); }
-
-    .check-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .check {
-      width: 16px;
-      height: 16px;
-      border-radius: 999px;
-      border: 1px solid var(--accent-gold-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: var(--accent-gold);
-      flex-shrink: 0;
-    }
-
-    .pill-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
-
-    .pill {
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(245, 196, 91, 0.25);
-      background: rgba(245, 196, 91, 0.06);
-      color: var(--text-muted);
-    }
-
-    .quote-block {
-      font-size: 12px;
-      color: var(--text-muted);
-      border-left: 2px solid rgba(245, 196, 91, 0.4);
-      padding-left: 10px;
-      margin-top: 8px;
-    }
-
-    .quote-block strong { color: var(--accent-gold); }
-
-    .faq-list { display: grid; gap: 10px; font-size: 13px; }
-
-    .faq-item {
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 10px 12px;
-      background: rgba(8, 8, 15, 0.9);
-    }
-
-    .faq-q { font-weight: 600; margin-bottom: 4px; }
-    .faq-a { color: var(--text-muted); }
-
-    .btn-wa {
-      background: var(--whatsapp);
-      color: #ffffff;
-      box-shadow: 0 0 10px rgba(37, 211, 102, 0.35);
-    }
-
-    .btn-wa:hover {
-      background: #1eb457;
-      box-shadow: 0 0 18px rgba(37, 211, 102, 0.45);
-    }
-
-    .wa-card {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    footer {
-      margin-top: 28px;
-      font-size: 11px;
-      color: var(--text-muted);
-      text-align: center;
-      opacity: 0.75;
-    }
-
-    .brand { color: var(--accent-gold); }
-
-    @media (max-width: 880px) {
-      .hero { grid-template-columns: 1fr; }
-      .hero-video-card { order: -1; }
-      body::before { width: 420px; height: 420px; top: -10px; opacity: 0.22; }
-      .payment-buttons { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      .hero-title { font-size: 24px; }
-      .page { padding-inline: 14px; }
+    @media (max-width: 640px){
+      .hero-title{font-size:24px}
+      .page{padding-inline:14px}
     }
   </style>
 </head>
@@ -461,7 +466,7 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" aria-label="Presentación principal">
         <div>
           <div class="eyebrow">Presentación oficial</div>
 
@@ -473,14 +478,14 @@
             Un sistema simple para ordenar tus ideas, entender cómo funciona un negocio digital y dejar de vender a ciegas.
           </p>
 
-          <div class="hero-badge">
-            <span class="dot"></span>
+          <div class="hero-badge" role="note" aria-label="Incluye PDF y video">
+            <span class="dot" aria-hidden="true"></span>
             <span>PDF estratégico + video explicativo completo</span>
           </div>
 
-          <div class="price-card">
+          <div class="price-card" id="precio">
             <div class="price-row">
-              <div class="price-main">
+              <div class="price-main" aria-label="Precio">
                 <span class="currency">USD</span>
                 <span class="amount-old">37</span>
                 <span class="amount">17</span>
@@ -488,32 +493,55 @@
               </div>
               <div class="price-tagline">Promoción limitada de lanzamiento</div>
             </div>
+
             <div class="price-extra">
               Acceso inmediato al PDF del Método Persaltum + clase explicativa donde ves el sistema completo aplicado a negocios reales.
             </div>
+
+            <div class="trust-row" aria-label="Señales de confianza">
+              <span class="trust-pill">🔒 Checkout seguro</span>
+              <span class="trust-pill">💳 Tarjeta / débito</span>
+              <span class="trust-pill">⚡ Acceso inmediato</span>
+              <span class="trust-pill">✅ Garantía 7 días</span>
+            </div>
           </div>
 
-          <ul class="hero-list">
-            <li><span class="bullet">✓</span>Guía estratégica del Método Persaltum en PDF.</li>
-            <li><span class="bullet">✓</span>Video explicativo donde te llevo paso a paso.</li>
-            <li><span class="bullet">✓</span>Acceso inmediato después del pago.</li>
+          <ul class="hero-list" aria-label="Incluye">
+            <li><span class="bullet" aria-hidden="true">✓</span>Guía estratégica del Método Persaltum en PDF.</li>
+            <li><span class="bullet" aria-hidden="true">✓</span>Video explicativo donde te llevo paso a paso.</li>
+            <li><span class="bullet" aria-hidden="true">✓</span>Acceso inmediato después del pago.</li>
           </ul>
 
-          <div class="hero-ctas">
+          <div class="hero-ctas" id="comprar">
             <div class="cta-row-label">Elegí tu forma de pago</div>
 
             <div class="payment-buttons">
-              <a class="btn btn-hotmart" href="https://pay.hotmart.com/V101694536F?off=uyadaend" target="_blank" rel="noopener noreferrer">
-                Comprar en Hotmart <span class="sub">recomendado</span>
+              <!-- CTA más persuasivo e internacional -->
+              <a
+                class="btn btn-hotmart"
+                data-track="pay_hotmart"
+                href="https://pay.hotmart.com/V101694536F?off=uyadaend"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pagar seguro por Hotmart"
+              >
+                Pagar seguro (Hotmart) <span class="sub">tarjeta / débito</span>
               </a>
 
-              <a class="btn btn-stripe" href="https://buy.stripe.com/8x228q3HL8H14qx1OKbwk0n" target="_blank" rel="noopener noreferrer">
-                Pagar con tarjeta (Stripe)
+              <a
+                class="btn btn-stripe"
+                data-track="pay_stripe"
+                href="https://buy.stripe.com/8x228q3HL8H14qx1OKbwk0n"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pagar con tarjeta por Stripe"
+              >
+                Pagar con tarjeta (Stripe) <span class="sub">checkout seguro</span>
               </a>
             </div>
 
             <div class="hero-note">
-              <strong>Garantía:</strong> 7 días por Hotmart · <strong>Acceso:</strong> inmediato por email.
+              <strong>Garantía:</strong> 7 días · <strong>Acceso:</strong> inmediato por email.
             </div>
           </div>
 
@@ -525,8 +553,9 @@
         <div class="hero-video-card">
           <div class="hero-video-tag">VSL + clase explicativa</div>
 
-          <div class="video-wrapper">
+          <div class="video-wrapper" aria-label="Video de presentación">
             <iframe
+              loading="lazy"
               src="https://www.youtube.com/embed/SJCvhQZMuT4"
               title="Presentación del Método Persaltum"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -678,8 +707,8 @@
               Sumate al grupo de WhatsApp donde comparto novedades, lanzamientos y avisos importantes del Método Persaltum.
             </p>
 
-            <a class="btn btn-wa" href="https://chat.whatsapp.com/Gg1xzEhj28vEJVSth0VLzG" target="_blank" rel="noopener noreferrer">
-              <span>💬</span>
+            <a class="btn btn-wa" data-track="join_whatsapp" href="https://chat.whatsapp.com/Gg1xzEhj28vEJVSth0VLzG" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">💬</span>
               <span>Unirme al grupo de WhatsApp de novedades</span>
             </a>
           </div>
@@ -697,17 +726,17 @@
             <div class="cta-row-label">Empezá ahora con el Método Persaltum</div>
 
             <div class="payment-buttons">
-              <a class="btn btn-hotmart" href="https://pay.hotmart.com/V101694536F?off=uyadaend" target="_blank" rel="noopener noreferrer">
-                Comprar en Hotmart <span class="sub">recomendado</span>
+              <a class="btn btn-hotmart" data-track="pay_hotmart_bottom" href="https://pay.hotmart.com/V101694536F?off=uyadaend" target="_blank" rel="noopener noreferrer">
+                Pagar seguro (Hotmart) <span class="sub">tarjeta / débito</span>
               </a>
 
-              <a class="btn btn-stripe" href="https://buy.stripe.com/8x228q3HL8H14qx1OKbwk0n" target="_blank" rel="noopener noreferrer">
-                Pagar con tarjeta (Stripe)
+              <a class="btn btn-stripe" data-track="pay_stripe_bottom" href="https://buy.stripe.com/8x228q3HL8H14qx1OKbwk0n" target="_blank" rel="noopener noreferrer">
+                Pagar con tarjeta (Stripe) <span class="sub">checkout seguro</span>
               </a>
             </div>
 
             <div class="hero-note">
-              <strong>Garantía:</strong> 7 días por Hotmart · <strong>Acceso:</strong> inmediato por email.
+              <strong>Garantía:</strong> 7 días · <strong>Acceso:</strong> inmediato por email.
             </div>
           </div>
         </div>
@@ -718,5 +747,39 @@
       <p><span class="brand">Persaltum</span> · Universidad Digital del Infoproducto · Todos los derechos reservados.</p>
     </footer>
   </div>
+
+  <!-- Sticky CTA (mobile) -->
+  <div class="sticky-cta" aria-label="Comprar ahora">
+    <div class="sticky-inner">
+      <div class="sticky-text">
+        <strong>USD 17 · Pago único</strong>
+        <span>Acceso inmediato + garantía 7 días</span>
+      </div>
+      <div class="sticky-actions">
+        <a class="btn-mini btn-hotmart" href="#comprar" aria-label="Ir a botones de pago">Comprar</a>
+        <a class="btn-mini btn-stripe" href="#comprar" aria-label="Ir a pago con tarjeta">Tarjeta</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tracking básico sin dependencias (para luego enchufar a GA/Meta si querés).
+    // Deja un registro en consola y permite reemplazar por fetch a tu endpoint.
+    (function () {
+      function track(name) {
+        try {
+          // console.log("[track]", name);
+          // Ejemplo futuro:
+          // fetch("/track", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ name, ts: Date.now() }) });
+        } catch (e) {}
+      }
+
+      document.addEventListener("click", function (e) {
+        var el = e.target.closest("[data-track]");
+        if (!el) return;
+        track(el.getAttribute("data-track"));
+      });
+    })();
+  </script>
 </body>
 </html>
